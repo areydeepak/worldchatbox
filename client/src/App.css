@@ -1,0 +1,14 @@
+#container{
+  border-style: solid;
+  border-color: black;
+  height: 15cm;
+  width: 20cm;
+}
+label{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width:auto;
+}
+#textbox{
+  height: 30px;
+  width:10cm;
+}

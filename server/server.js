@@ -6,7 +6,7 @@ const io=require('socket.io')(3002,{
 
 io.on('connection',socket=>{
     console.log(socket.id)
-    socket.on('send',(message)=>{
-        socket.broadcast.emit('recieve',message)
+    socket.on('send',(message,id)=>{
+        socket.broadcast.emit('recieve',message,id)
     })
 })

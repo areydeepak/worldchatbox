@@ -3,12 +3,49 @@
   border-color: black;
   height: 15cm;
   width: 20cm;
+  overflow: scroll;
+  
 }
 label{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
   width:auto;
 }
 #textbox{
-  height: 30px;
+  height: 40px;
   width:10cm;
+  margin: 10px;
+}
+
+#user{
+  /* background-color:rgb(44 54 62);
+  padding-left:12px;
+  word-break:break-word; */
+  width: fit-content;
+  color: blue;
+  font-size: large;
+  margin-left: auto; 
+  margin-right: 0;
+  padding: 5px ;
+  border-radius: 0.5em;
+  border-style: solid;
+  border-color: blue;
+  margin-top: 4px ;
+  margin-bottom: 4px;
+  
+}
+#others{
+  width: max-content;
+  color: red;
+  font-size: large;
+  padding: 1px ;
+  border-radius: 0.5em;
+  border-style: solid;
+  border-color: red;
+  margin-top: 4px ;
+  margin-bottom: 4px;
+}
+#id{
+  padding: 0px;
+  margin: 0px;
+  color: black;
 }

@@ -1,30 +1,39 @@
-import {React,useState,useEffect,useRef} from 'react'
+import {React,useRef} from 'react'
 import io from "socket.io-client"
 
-const socket=io('http://localhost:3002/')
+const socket=io('http://localhost:3002')
 socket.on("connect",()=>{
     const div=document.createElement("div");
     div.textContent="Your id is : " + `${socket.id}` ;
     document.getElementById("container").append(div);
 })
-socket.on("recieve",(message)=>{
+socket.on("recieve",(message,id)=>{
     const div=document.createElement("div");
+    //console.log(id);
+    //const label=document.createElement("label");
+    div.id="others"
+    const h6=document.createElement("h6");
+    h6.textContent="id: "+id;
+    h6.id="id"
     div.textContent=message ;
     document.getElementById("container").append(div);
+    div.append(h6);
+   
 })
 
 function Main() {
-    const [text, settext] = useState("");
+    //const [text, settext] = useState("");
     const textInput = useRef(null);
-    useEffect(() => {
-        console.log(text);
-    }, [text])
+    // useEffect(() => {
+    //     console.log(text);
+    // }, [text])
     let handleClick=()=>{
-        settext(textInput.current.value);
         const div=document.createElement("div");
+        div.id="user";
+        //div.align="left";
         div.textContent=textInput.current.value;
         document.getElementById("container").append(div);
-        socket.emit('send',textInput.current.value);
+        socket.emit('send',textInput.current.value,socket.id);
         textInput.current.value="";
     }
     
